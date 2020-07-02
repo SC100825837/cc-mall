@@ -1,0 +1,20 @@
+server:
+  port: 3002
+spring:
+  application:
+    name: mall-manager-web
+
+dubbo:
+  application:
+    name: mall-manager-web
+  protocol:
+    name: dubbo
+  registry:
+    protocol: zookeeper
+    address: 192.168.38.130:2181
+  scan:
+    base-packages: com.cc.mall
+  consumer:
+    timeout: 600000
+    check: false
+

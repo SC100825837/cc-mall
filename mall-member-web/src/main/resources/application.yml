@@ -1,0 +1,16 @@
+server:
+  port: 2002
+spring:
+  application:
+    name: mall-member-web
+
+dubbo:
+  application:
+    name: mall-member-web
+  protocol:
+    name: dubbo
+  registry:
+    protocol: zookeeper
+    address: 192.168.38.130:2181
+  scan:
+    base-packages: com.cc.mall

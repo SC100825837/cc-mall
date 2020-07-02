@@ -1,0 +1,30 @@
+server:
+  port: 3001
+spring:
+  application:
+    name: mall-manager-service
+
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/cc-mall?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+dubbo:
+  application:
+    name: mall-manager-service
+  protocol:
+    name: dubbo
+  registry:
+    protocol: zookeeper
+    address: 192.168.38.130:2181
+  scan:
+    base-packages: com.cc.mall
+  consumer:
+    timeout: 600000
+    check: false
